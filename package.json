@@ -1,0 +1,19 @@
+{
+  "name": "FastFeet_Backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SdnSantos/FastFeet_Backend.git",
+  "author": "Sidney Santos <sidney_ssantos@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "debug": "node --inspect -r sucrase/register src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.12.1"
+  }
+}

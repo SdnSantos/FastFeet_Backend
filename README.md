@@ -21,6 +21,8 @@ Início do desafio: 15/02/2020
 
  - Criação da sessão com jwt
 
+ - Update de usuário
+
 
 
 

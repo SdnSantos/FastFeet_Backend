@@ -15,6 +15,10 @@ Início do desafio: 15/02/2020
 
  - Criação do usuário admin
 
+ - Criação de usuário normal
+
+ - Hash de senha
+
 
 
 

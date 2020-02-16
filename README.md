@@ -11,6 +11,10 @@ Início do desafio: 15/02/2020
 
  - Configuração do Sequelize e do BD postgres
 
+ - Criação da migration de users e do seed de admin
+
+ - Criação do usuário admin
+
 
 
 

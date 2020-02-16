@@ -23,6 +23,8 @@ Início do desafio: 15/02/2020
 
  - Update de usuário
 
+ - Validações no UserController e SessionController
+
 
 
 

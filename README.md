@@ -19,6 +19,8 @@ Início do desafio: 15/02/2020
 
  - Hash de senha
 
+ - Criação da sessão com jwt
+
 
 
 

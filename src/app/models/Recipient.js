@@ -8,7 +8,7 @@ class Recipient extends Model {
         street: Sequelize.STRING,
         number: Sequelize.INTEGER,
         complement: Sequelize.STRING,
-        country: Sequelize.STRING,
+        state: Sequelize.STRING,
         city: Sequelize.STRING,
         zip_code: Sequelize.STRING,
       },
@@ -16,6 +16,8 @@ class Recipient extends Model {
         sequelize,
       }
     );
+
+    return this;
   }
 }
 

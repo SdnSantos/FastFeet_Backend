@@ -1,12 +1,22 @@
 import * as Yup from 'yup';
-
 import Recipient from '../models/Recipient';
 
 class RecipientController {
   async index(req, res) {
-    const recipients = await Recipient.findAll();
+    const recipient = await Recipient.findAll({
+      attributes: [
+        'id',
+        'name',
+        'street',
+        'number',
+        'complement',
+        'state',
+        'city',
+        'zip_code',
+      ],
+    });
 
-    return res.json(recipients);
+    return res.json(recipient);
   }
 
   async store(req, res) {
@@ -35,6 +45,8 @@ class RecipientController {
     }
 
     const {
+      id,
+      name,
       street,
       number,
       complement,
@@ -45,6 +57,7 @@ class RecipientController {
 
     return res.json({
       id,
+      name,
       street,
       number,
       complement,
@@ -69,17 +82,33 @@ class RecipientController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { name } = req.body;
+    const recipient = await Recipient.findByPk(req.params.recipientId);
 
-    const RecipientExists = await Recipient.findOne({ where: { name } });
-
-    if (RecipientExists) {
-      return res.status(400).json({ error: 'Recipient already exists' });
+    if (!recipient) {
+      return res.status(401).json({ error: 'Recipient does not exists' });
     }
 
-    const recipient = await Recipient.update(req.body);
+    const {
+      id,
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      zip_code,
+    } = await recipient.update(req.body);
 
-    return res.json(recipient);
+    return res.json({
+      id,
+      name,
+      street,
+      number,
+      complement,
+      state,
+      city,
+      zip_code,
+    });
   }
 }
 
